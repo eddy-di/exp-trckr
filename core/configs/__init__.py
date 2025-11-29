@@ -5,3 +5,4 @@ from .middleware import *
 from .rest import *
 from .static import *
 from .template import *
+from .auth import *
