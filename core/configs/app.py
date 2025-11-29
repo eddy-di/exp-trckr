@@ -10,11 +10,12 @@ INSTALLED_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-
+    'rest_framework',
 ]
 
 PROJECT_APPS = [
     'apps.users',
+    'apps.finance',
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS + PROJECT_APPS
