@@ -12,6 +12,7 @@ INSTALLED_APPS = [
 THIRD_PARTY_APPS = [
     'rest_framework',
     'drf_spectacular',
+    "rest_framework_simplejwt.token_blacklist",
 ]
 
 PROJECT_APPS = [

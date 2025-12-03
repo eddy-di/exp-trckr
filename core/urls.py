@@ -17,9 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+from rest_framework_simplejwt.views import (
+    # TokenObtainPairView,
+    TokenRefreshView,
+    TokenVerifyView
+)
+
+from apps.users.views import MultiFieldTokenObtainPairView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('api/v1/auth/', include('apps.users.urls')),
 
     path("api/v1/finance/", include("apps.finance.urls")),
 
