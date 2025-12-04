@@ -5,7 +5,7 @@ from apps.finance.views.transaction import TransactionViewSet
 
 
 router = DefaultRouter()
-router.register(r"categories", CategoryViewSet, basename="categories")
+router.register(r"categories", CategoryViewSet, basename="category")
 router.register(r"accounts", AccountViewSet, basename="account")
 router.register(r"transactions", TransactionViewSet, basename="transaction")
 

@@ -13,3 +13,5 @@ wheels/
 db.sqlite3
 
 fixtures/
+htmlcov/
+.pytest_cache/
