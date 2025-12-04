@@ -7,13 +7,20 @@ from common.models import BaseModel
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email=None, phone=None, password=None, **extra_fields):
-        if not email and not phone:
-            raise ValueError("Either email or phone must be provided")
+    def create_user(self, email=None, phone=None, username=None, password=None, **extra_fields):
+        if not email and not phone and not username:
+            raise ValueError(
+                "Either email, username, or phone must be provided")
 
         if email:
             email = self.normalize_email(email)
             extra_fields["email"] = email
+
+        if phone:
+            extra_fields['phone'] = phone
+
+        if username:
+            extra_fields['username'] = username
 
         user = self.model(**extra_fields)
         user.set_password(password)
